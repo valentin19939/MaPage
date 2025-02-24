@@ -11,6 +11,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 * {
@@ -21,15 +22,14 @@ html {
 
 /* Общие стили */
 body {
-    font-family: 'Heebo', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    min-height: 100vh;
+  font-family: 'Heebo', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 /* Контейнер */
 .container {
-  padding: 0 120px 0 150px;
+  padding: 0 120px 0 120px;
 }
 
 /* Верхнее меню */
@@ -105,10 +105,6 @@ body {
   text-align: left;
   font-size: 20px;
   line-height: 1.6;
-}
-
-.about-image {
-  padding-right: 50px;
 }
 
 .about-image img {
@@ -187,8 +183,8 @@ body {
 }
 
 .title {
-  padding-top: 40px;
-  padding-bottom: 20px;
+  padding-top: 50px;
+  padding-bottom: 25px;
 }
 
 .text {
@@ -215,6 +211,7 @@ body {
 
 .project-info {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
   max-width: 600px;
@@ -226,18 +223,10 @@ body {
   align-self: flex-start; /* Оставляем кнопки слева */
 }
 
-/* Футер */
-.footer {
-  padding-top: 40px;
-  padding-right: 10px;
-  display: flex;
-  justify-content: flex-end;
-  font-size: 14px;
-}
-
 /* Контакты */
 #contact {
   padding-top: 40px;
+  margin-bottom: 30px;
 }
 
 #contact h2 {
@@ -290,10 +279,6 @@ body {
     align-items: center;
   }
 
-  .about-text {
-    margin-right: 40px;
-  }
-
   .about-image img {
     width: 200px;
     height: 200px;
@@ -303,9 +288,10 @@ body {
 /* === АДАПТИВ ДЛЯ ТЕЛЕФОНОВ === */
 @media (max-width: 768px) {
   .project-info p {
-    margin-bottom: 5px; /* Добавляет 5 пикселей отступа снизу текста */
+    margin-bottom: 5px; /* Отступ текста */
   }
 
+  /* Показываем короткий текст, скрываем длинный */
 
   .about_hey,
   .about-text {
@@ -314,32 +300,69 @@ body {
 
   .container {
     padding: 0 30px;
+    text-align: center;
   }
 
   .about-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 15px;
   }
 
   .about_hey {
     padding-top: 50px;
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .about-text {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .project-info h3 {
     font-size: 18px;
+    text-align: center; /* Центрируем заголовок */
   }
 
   .project-info p {
     font-size: 14px;
+    text-align: center; /* Центрируем текст */
+  }
+
+  /* Делаем картинки еще меньше */
+  .project-image {
+    width: 100%;
+    max-width: 220px; /* Немного увеличил для баланса */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Меняем порядок на "заголовок → картинка → текст" */
+  .project-container {
+    flex-direction: column; /* Элементы теперь идут сверху вниз */
+    align-items: center;
+    text-align: center;
+  }
+
+  .project-info {
+    display: flex;
+    flex-direction: column; /* Выстраиваем содержимое */
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Кнопка тоже центрируется */
+  .project-info .btn {
+    align-self: center;
+  }
+
+  .project + .project {
+    border-top: 2px solid #ddd; /* Линия между проектами */
+    padding-top: 40px; /* Отступ сверху после первой секции */
   }
 }
+
 
 /* === АДАПТИВ ДЛЯ ТЕЛЕВИЗОРОВ === */
 @media (min-width: 1440px) {
