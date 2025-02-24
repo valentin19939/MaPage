@@ -1,0 +1,349 @@
+/* Подключаем шрифт */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Основные переменные */
+:root {
+    --primary-color: #f34747;
+    --background-color: rgba(255, 255, 255, 0.875);
+    --text-color: #21243D;
+    --border-radius: 10px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Общие стили */
+body {
+    font-family: 'Heebo', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+/* Контейнер */
+.container {
+  padding: 0 120px 0 150px;
+}
+
+/* Верхнее меню */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #EDF7FA;
+  padding: 20px 150px;
+  display: flex;
+  justify-content: flex-end; /* По умолчанию справа */
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Навигация */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.nav-menu li a:hover {
+  color: var(--primary-color);
+}
+
+/* Центрируем меню ТОЛЬКО на планшетах и телефонах */
+@media (max-width: 1024px) {
+  .header {
+    display: flex;
+    justify-content: center; /* Центрируем меню */
+    padding: 15px 0; /* Делаем отступы равными */
+  }
+
+  .nav-menu {
+    gap: 20px; /* Уменьшаем расстояние между пунктами */
+  }
+
+  .nav-menu li a {
+    font-size: 16px; /* Делаем текст чуть меньше */
+  }
+}
+
+/* Блок "Обо мне" */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about_hey {
+  padding-top: 120px;
+  font-size: 40px;
+}
+
+.about_me {
+  padding-top: 20px;
+  color: #21243D;
+}
+
+.about-text {
+  flex: 1;
+  padding-top: 30px;
+  max-width: 850px;
+  text-align: left;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.about-image {
+  padding-right: 50px;
+}
+
+.about-image img {
+  width: 263px;
+  height: 263px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #c5e3ec;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Кнопка */
+.btn {
+  margin-top: auto;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+  display: block;
+  padding: 12px 24px;
+  background-color: #FF6464;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+.resume-btn {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 210px;
+  text-align: center;
+  display: block;
+  padding: 12px 24px;
+  background-color: #FF6464;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.resume-btn:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+/* Центрируем кнопку "Скачать резюме" ТОЛЬКО на телефонах */
+@media (max-width: 768px) {
+  .resume-btn {
+    margin: 20px auto;
+    display: block;
+  }
+}
+
+/* Проекты */
+#projects {
+  margin-top: 90px;
+  background-color: #EDF7FA;
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+.title {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.text {
+  padding-top: 5px;
+  color: #21243D;
+}
+
+/* Выравнивание контейнера проекта */
+.project-container {
+  display: flex;
+  align-items: stretch; /* Растягиваем контейнер */
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.project-image {
+  width: 200px;
+  border-radius: 10px;
+  border: 3px solid #c5e3ec;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #1B1B1B;
+}
+
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 600px;
+}
+
+/* Выравнивание кнопки "Смотреть" внизу */
+.project-info .btn {
+  margin-top: auto;
+  align-self: flex-start; /* Оставляем кнопки слева */
+}
+
+/* Футер */
+.footer {
+  padding-top: 40px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 14px;
+}
+
+/* Контакты */
+#contact {
+  padding-top: 40px;
+}
+
+#contact h2 {
+  margin-bottom: 10px;
+}
+
+.textt {
+  color: #21243D;
+}
+
+.highlight {
+  color: 21243D;
+  font-weight: bold;
+}
+
+/* === АДАПТИВ ДЛЯ ПЛАНШЕТОВ === */
+@media (max-width: 1024px) {
+
+  .title {
+    font-size: 28px; /* Уменьшаем заголовок "Мои проекты", но он больше, чем на телефонах */
+}
+
+.project-info h3 {
+    font-size: 20px; /* Чуть меньше заголовки проектов */
+}
+
+.project-info p {
+    font-size: 16px; /* Чуть меньше текст описания проектов */
+}
+
+  .about_hey {
+    font-size: 36px; /* Уменьшаем заголовок, но он больше, чем на телефонах */
+}
+
+.about-text {
+    font-size: 18px; /* Чуть меньше текст, но читаемый */
+}
+
+  .project-info h3 {
+    font-size: 20px;
+  }
+
+  .project-info p {
+    font-size: 16px;
+  }
+
+  .about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .about-text {
+    margin-right: 40px;
+  }
+
+  .about-image img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* === АДАПТИВ ДЛЯ ТЕЛЕФОНОВ === */
+@media (max-width: 768px) {
+  .project-info p {
+    margin-bottom: 5px; /* Добавляет 5 пикселей отступа снизу текста */
+  }
+
+
+  .about_hey,
+  .about-text {
+    text-align: center;
+  }
+
+  .container {
+    padding: 0 30px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .about_hey {
+    padding-top: 50px;
+    font-size: 32px;
+  }
+
+  .about-text {
+    font-size: 16px;
+  }
+
+  .project-info h3 {
+    font-size: 18px;
+  }
+
+  .project-info p {
+    font-size: 14px;
+  }
+}
+
+/* === АДАПТИВ ДЛЯ ТЕЛЕВИЗОРОВ === */
+@media (min-width: 1440px) {
+  .container {
+    padding: 0 250px;
+  }
+}
